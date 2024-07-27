@@ -17,7 +17,7 @@ git clone https://github.com/kapnak/sdmon
 cd sdmon
 python3 -m venv venv
 ./venv/bin/pip install -r requirements.txt
-pyinstaller -F -n sdmon main.py
+./venv/bin/pyinstaller -F -n sdmon main.py
 cp dist/sdmon /usr/local/bin/sdmon
 ```
 

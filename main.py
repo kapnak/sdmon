@@ -5,7 +5,7 @@ import configparser
 from zabbix_utils import ZabbixAPI, exceptions
 
 
-CONFIG_PATH = '/etc/monitor.conf'
+CONFIG_PATH = '/etc/sdmon.conf'
 
 
 def get_config():
@@ -33,7 +33,7 @@ def get_config():
 
     if config['zabbix']['server'] == '' or config['zabbix']['token'] == '':
         print(f'Error: Please fill the configuration file "{CONFIG_PATH}" first.')
-        exit(1)
+        sys.exit(1)
 
     return config
 
@@ -163,7 +163,7 @@ try:
         print(f'Usage:\n'
               f'\t{sys.argv[0]} <service name> <command>\n'
               f'\t{sys.argv[0]} delete <service name>')
-        exit(1)
+        sys.exit(1)
 
     if sys.argv[1] == 'delete':
         systemd_delete_service(sys.argv[1])
