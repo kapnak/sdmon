@@ -71,7 +71,7 @@ def zabbix_create_service(zabbix_server, token, hostname, service):
             'interfaceid': interface_id,
             'type': 0,
             'value_type': 1,
-            'delay': '15s',
+            'delay': '30s',
             'tags': [
                 {'tag': 'sdmon'}
             ]
