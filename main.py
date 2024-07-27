@@ -150,7 +150,7 @@ def systemd_delete_service(service):
     os.system(f'systemctl stop {service}.service')
     os.system(f'systemctl disable {service}.service')
     os.system(f'rm -f /etc/systemd/system/{service}.service')
-    os.system('systemctl daemon-reload command')
+    os.system('systemctl daemon-reload')
 
 
 try:
@@ -166,8 +166,8 @@ try:
         sys.exit(1)
 
     if sys.argv[1] == 'delete':
-        systemd_delete_service(sys.argv[1])
-        zabbix_delete_service(server, token, hostname, sys.argv[1])
+        systemd_delete_service(sys.argv[2])
+        zabbix_delete_service(server, token, hostname, sys.argv[2])
         print(f'Service "{sys.argv[1]}" has been deleted.')
     else:
         systemd_create_service(sys.argv[1], ' '.join(sys.argv[2:]))
