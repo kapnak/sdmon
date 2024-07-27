@@ -142,7 +142,7 @@ def systemd_create_service(service, command):
                 f'\n'
                 f'[Install]\n'
                 f'WantedBy=multi-user.target')
-    os.system('systemctl daemon-reload command')
+    os.system('systemctl daemon-reload')
     os.system(f'systemctl enable --now {service}.service')
 
 
