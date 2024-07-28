@@ -49,6 +49,7 @@ sdmon <service name> <command>
 This command will :
 - Create a service called <service name>.
 - Start and enable the service.
+- Redirect command output to `/var/log/<service name>.log`
 - Create an item and a trigger on the configured Zabbix server.
 
 
